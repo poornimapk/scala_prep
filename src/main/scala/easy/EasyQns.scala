@@ -285,9 +285,23 @@ class EasyQns {
     result.toString()
   }
 
+  // check palindrome
+  def checkPalindrome(str: String): Boolean = {
+    str.equals(reverseString(str))
+  }
+
   // Write a function that takes an array of integers and returns a new array with all the duplicate elements removed.
+  // Remove only the second repeated elem onwards, retain the same order
   def removeDuplicates(arr: Array[Int]): Array[Int] = {
-    ???
+//    Set[Int](arr: _*).toArray
+//    arr.toSet.toArray
+//    arr.distinct
+//    arr.foldLeft(Set.empty[Int])((set, elem) => set + elem).toArray
+    val resultArr = new ArrayBuffer[Int]()
+    for(num <- arr) {
+      if(!resultArr.contains(num)) resultArr.addOne(num)
+    }
+    resultArr.toArray
   }
 
 }

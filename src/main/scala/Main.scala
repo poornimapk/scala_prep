@@ -68,6 +68,7 @@ object Main {
     val arr4 = Array(3, 1, 4, 5, 9)
     val arr5 = Array(1, 2, 3, 4)
     val arr6 = Array(5, 2, 0, 9, 4)
+    val arr7 = Array(5, 0, 5, 2, 10, 9, 2)
 
 //    println(easyQns.secondLargestNumber(arr1))
 //    println(easyQns.secondLargestNumber(arr2))
@@ -89,6 +90,7 @@ object Main {
     val str1 = "leetcode"
     val str2 = "disney"
     val str3 = "crypt myth"
+    val str4 = "malayalam"
 
 //    println(s"Word ${str1} without vowels: ${easyQns.removeVowels(str1)}")
 //    println(s"Word ${str2} without vowels: ${easyQns.removeVowels(str2)}")
@@ -100,9 +102,15 @@ object Main {
 //    println(s"Max and Min values in arr: ${arr3.mkString(", ")} is: ${easyQns.findMaxAndMinCustom(arr3)}")
 //    println(s"Max and Min values in arr: ${arr5.mkString(", ")} is: ${easyQns.findMaxAndMinCustom(arr5)}")
 
-    println(s"Reverse of string: ${str1} is: ${easyQns.reverseString(str1)}")
-    println(s"Reverse of string: ${str1} is: ${easyQns.reverseString(str2)}")
-    println(s"Reverse of string: ${str1} is: ${easyQns.reverseString(str3)}")
-    println(s"Reverse of string: ${str1} is: ${easyQns.reverseString("")}")
+//    println(s"Reverse of string: ${str1} is: ${easyQns.reverseString(str1)}, is string palindrome? ${easyQns.checkPalindrome(str1)}")
+//
+//    println(s"Reverse of string: ${str2} is: ${easyQns.reverseString(str2)}, is string palindrome? ${easyQns.checkPalindrome(str2)}")
+//    println(s"Reverse of string: ${str3} is: ${easyQns.reverseString(str3)}, is string palindrome? ${easyQns.checkPalindrome(str3)}")
+//    println(s"Reverse of string: ${""} is: ${easyQns.reverseString("")}, is string palindrome? ${easyQns.checkPalindrome("")}")
+//    println(s"Reverse of string: ${str4} is: ${easyQns.reverseString(str4)}, is string palindrome? ${easyQns.checkPalindrome(str4)}")
+
+    println(s"Remove duplicates from arr: ${arr7.mkString(", ")}: ${easyQns.removeDuplicates(arr7).mkString(", ")}")
+    println(s"Remove duplicates from arr: ${arr2.mkString(", ")}: ${easyQns.removeDuplicates(arr2).mkString(", ")}")
+    println(s"Remove duplicates from arr: ${arr1.mkString(", ")}: ${easyQns.removeDuplicates(arr1).mkString(", ")}")
   }
 }
