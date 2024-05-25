@@ -166,5 +166,129 @@ class EasyQns {
     val res = gcd(minNum, maxNum)
     res
   }
+
+  def reverseArray(arr: Array[Int]): Array[Int] = {
+    val reversedArr = new Array[Int](arr.length)
+
+    for(i <- 0 until  arr.length) {
+      reversedArr(i) = arr(arr.length - 1 - i)
+    }
+
+    reversedArr
+  }
+
+  def squaredEvenNumbers(list: List[Int]): List[Int] = {
+    for {
+      n <- list if n % 2 == 0
+    } yield n * n
+  }
+
+  def secondLargestNumber(arr: Array[Int]): Option[Int] = {
+    if(arr.length == 1) return None
+    val sortedArr = arr.sorted
+    val secondElem = sortedArr(sortedArr.length - 2)
+    secondElem < sortedArr(sortedArr.length - 1) match {
+      case true => Some(secondElem)
+      case _ => None
+    }
+  }
+
+  def secondLargestWithoutSort(arr: Array[Int]): Option[Int] = {
+    // declare largestNum and secondLargestNum // declare distictCount
+
+    // if arr.length == 1 return None
+    if(arr.length == 1) None
+    else {
+      var largestNum = Int.MinValue
+      var secondLargestNum = Int.MinValue
+      var distinctCount = 0
+      // loop through arr and check num > largestNum
+      for (num <- arr) {
+        if (num > largestNum) {
+          // true set secondLargestNum = largestNum, largestNum = num
+          secondLargestNum = largestNum
+          largestNum = num
+          distinctCount += 1
+        } else if (num > secondLargestNum && num != largestNum) { // false check num > secondLargestNum secondLargestNum = num
+          secondLargestNum = num
+          distinctCount += 1
+        }
+      }
+      if(distinctCount < 2) None else Some(secondLargestNum)
+    }
+
+  }
+
+  def productExceptSelf(arr: Array[Int]): Array[Int] = {
+    // O(n^2) solution brute force
+    val resultArr = Array.fill[Int](arr.length)(1)
+    var previousProduct = 1
+
+    for(i <- arr.indices) {
+      var product = 1
+      for(j <- i + 1 until arr.length) {
+        product = product * arr(j)
+      }
+      resultArr(i) = previousProduct * product
+      previousProduct = previousProduct * arr(i)
+    }
+
+    resultArr
+  }
+
+//  def productExceptSelfOptimal(arr: Array[Int]): Array[Int] = {
+//  // two pass algorithm
+//
+//  }
+
+  // Write a function that takes an array of integers and returns sum of all even numbers in the array.
+  def sumOfAllEvenNums(arr: Array[Int]): Option[Int] = {
+    val evenNums = for {
+      n <- arr if n % 2 == 0
+    } yield n
+    if(evenNums.isEmpty) None else Some(evenNums.reduceLeft[Int](_ + _))
+  }
+
+  // write a function to remove vowels
+  def removeVowels(str: String): String = {
+    val result = new StringBuilder()
+    val vowels = Set('a', 'e', 'i', 'o', 'u')
+    for{
+      c <- str if !vowels.contains(c)
+    } result.append(c)
+    result.toString()
+  }
+
+  // write a function to find max and min in an integer array
+  def findMaxAndMinInBuilt(arr: Array[Int]): (Int, Int) = {
+    (arr.max, arr.min)
+  }
+
+  // write a function to find max and min in an integer array without using inbuilt function
+  def findMaxAndMinCustom(arr: Array[Int]): (Int, Int) = {
+    var maxValue = Int.MinValue
+    var minValue = Int.MaxValue
+
+    for(num <- arr) {
+      if(num > maxValue) maxValue = num
+      if(num < minValue) minValue = num
+    }
+    (maxValue, minValue)
+  }
+
+  //  Implement a function that takes a string and returns a new string with all the characters reversed.
+  def reverseString(str: String): String = {
+    val result = new StringBuilder()
+    for(i <- str.length - 1 to 0 by -1) {
+      result.append(str(i))
+    }
+    result.toString()
+  }
+
+  // Write a function that takes an array of integers and returns a new array with all the duplicate elements removed.
+  def removeDuplicates(arr: Array[Int]): Array[Int] = {
+    ???
+  }
+
 }
 

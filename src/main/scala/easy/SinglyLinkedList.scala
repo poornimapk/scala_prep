@@ -27,6 +27,26 @@ class SinglyLinkedList(var head: SinglyLinkedListNode = null, var tail: SinglyLi
 
   }
 
+  def insertNodeAtPosition(llist: SinglyLinkedListNode, data:Int, position: Int): SinglyLinkedListNode = {
+    val newNode = new SinglyLinkedListNode(data)
+    if(position == 0) {
+      newNode.next = llist
+      return newNode
+    }
+
+    var current = llist
+    var counter = 0
+    while(current != null && counter < position - 1) {
+      current = current.next
+      counter += 1
+    }
+    if(current != null) {
+      newNode.next = current.next
+      current = newNode
+    }
+    llist
+  }
+
   def reverse(singlyLinkedList: SinglyLinkedListNode): SinglyLinkedListNode = {
     var prev: SinglyLinkedListNode = null
     var current = singlyLinkedList
@@ -41,17 +61,7 @@ class SinglyLinkedList(var head: SinglyLinkedListNode = null, var tail: SinglyLi
     prev
   }
 
-  def printSinglyLinkedList(head: SinglyLinkedListNode, sep: String): Unit = {
-    var node = head
-    while (node != null){
-      print(node.data)
-      node = node.next
-      if(node != null){
-        print(sep)
-      }
-    }
-    println()
-  }
+
 
   def reversePrintSinglyLinkedList(head: SinglyLinkedListNode): Unit = {
     var stack = List[Int]()
@@ -80,11 +90,29 @@ object Solution {
 //        sLlist.insertNode(sLlistItem)
         sLlist.insertNodeAtHead(sLlistItem)
       }
-      sLlist.printSinglyLinkedList(sLlist.head, ", ")
-
-      val reversedList = sLlist.reverse(sLlist.head)
-      sLlist.printSinglyLinkedList(reversedList, ", ")
+      def printSinglyLinkedList(head: SinglyLinkedListNode, sep: String): Unit = {
+        var node = head
+        while (node != null){
+          print(node.data)
+          node = node.next
+          if(node != null){
+            print(sep)
+          }
+        }
+        println()
+      }
+      printSinglyLinkedList(sLlist.head, ", ")
+//
+//      val reversedList = sLlist.reverse(sLlist.head)
+//      sLlist.printSinglyLinkedList(reversedList, ", ")
 //      sLlist.reversePrintSinglyLinkedList(sLlist.head)
+      print(s"Enter integer to insert at position: ")
+      val data = stdin.readLine.trim.toInt
+      print(s"Enter position to insert at: ")
+      val position = stdin.readLine.trim.toInt
+      val updatedsLlist = sLlist.insertNodeAtPosition(sLlist.head, data, position)
+
+      printSinglyLinkedList(updatedsLlist, ", ")
     }
 
 

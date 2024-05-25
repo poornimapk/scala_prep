@@ -1,6 +1,6 @@
 package scala
 
-import easy.{EasyQns, LinkedList}
+import easy.EasyQns
 
 object Main {
   def main(args: Array[String]): Unit = {
@@ -45,12 +45,12 @@ object Main {
 //    val nums = Array(3,3)
 //    println(s"GCD of nums in array ${nums.mkString(", ")} is ${easyQns.findGCD(nums)}")
 
-    val llist = new LinkedList[Int]
-    llist.append(10)
-    llist.append(20)
-    llist.append(30)
-    llist.printList()
-    llist.printListReverse()
+//    val llist = new LinkedList[Int]
+//    llist.append(10)
+//    llist.append(20)
+//    llist.append(30)
+//    llist.printList()
+//    llist.printListReverse()
 
 //    val singlyLinkedList = new SinglyLinkedList()
 //    singlyLinkedList.insertNode(100)
@@ -58,5 +58,51 @@ object Main {
 //    singlyLinkedList.insertNode(300)
 //    singlyLinkedList.reversePrintSinglyLinkedList(singlyLinkedList.head)
 //    singlyLinkedList.printSinglyLinkedList(singlyLinkedList.head, ",")
+
+//    val nums = List(1, 2, 3, 4, 5, 8)
+//    println(s"List of squared even numbers: ${easyQns.squaredEvenNumbers(nums).mkString(", ")}")
+
+    val arr1 = Array(1, 2, 3, 4, 5)
+    val arr2 = Array(5, 5, 5)
+    val arr3 = Array(1)
+    val arr4 = Array(3, 1, 4, 5, 9)
+    val arr5 = Array(1, 2, 3, 4)
+    val arr6 = Array(5, 2, 0, 9, 4)
+
+//    println(easyQns.secondLargestNumber(arr1))
+//    println(easyQns.secondLargestNumber(arr2))
+//    println(easyQns.secondLargestNumber(arr3))
+//    println(easyQns.secondLargestNumber(arr4))
+//    println(easyQns.secondLargestNumber(arr5))
+
+//    println(easyQns.secondLargestWithoutSort(arr1))
+//    println(easyQns.secondLargestWithoutSort(arr5))
+//    println(easyQns.secondLargestWithoutSort(arr3))
+//    println(easyQns.secondLargestWithoutSort(arr2))
+//    println(easyQns.secondLargestWithoutSort(arr4))
+
+//    println(s"${easyQns.productExceptSelf(arr1).mkString(", ")}")
+//    println(s"${easyQns.productExceptSelf(arr5).mkString(", ")}")
+//    println(s"Sum of all even nums for input {${arr2.mkString(", ")}}: ${easyQns.sumOfAllEvenNums(arr2)}")
+//    println(s"Sum of all even nums for input {${arr1.mkString(", ")}}: ${easyQns.sumOfAllEvenNums(arr1)}")
+
+    val str1 = "leetcode"
+    val str2 = "disney"
+    val str3 = "crypt myth"
+
+//    println(s"Word ${str1} without vowels: ${easyQns.removeVowels(str1)}")
+//    println(s"Word ${str2} without vowels: ${easyQns.removeVowels(str2)}")
+//    println(s"Word ${str3} without vowels: ${easyQns.removeVowels(str3)}")
+
+//    println(s"Max and Min values in arr: ${arr6.mkString(", ")} is: ${easyQns.findMaxAndMinCustom(arr6)}")
+//    println(s"Max and Min values in arr: ${arr4.mkString(", ")} is: ${easyQns.findMaxAndMinCustom(arr4)}")
+//    println(s"Max and Min values in arr: ${arr2.mkString(", ")} is: ${easyQns.findMaxAndMinCustom(arr2)}")
+//    println(s"Max and Min values in arr: ${arr3.mkString(", ")} is: ${easyQns.findMaxAndMinCustom(arr3)}")
+//    println(s"Max and Min values in arr: ${arr5.mkString(", ")} is: ${easyQns.findMaxAndMinCustom(arr5)}")
+
+    println(s"Reverse of string: ${str1} is: ${easyQns.reverseString(str1)}")
+    println(s"Reverse of string: ${str1} is: ${easyQns.reverseString(str2)}")
+    println(s"Reverse of string: ${str1} is: ${easyQns.reverseString(str3)}")
+    println(s"Reverse of string: ${str1} is: ${easyQns.reverseString("")}")
   }
 }
