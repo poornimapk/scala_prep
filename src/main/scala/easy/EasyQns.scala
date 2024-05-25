@@ -277,6 +277,7 @@ class EasyQns {
   }
 
   //  Implement a function that takes a string and returns a new string with all the characters reversed.
+  // Write a function to reverse a given string in Scala.
   def reverseString(str: String): String = {
     val result = new StringBuilder()
     for(i <- str.length - 1 to 0 by -1) {
@@ -286,6 +287,7 @@ class EasyQns {
   }
 
   // check palindrome
+  // Implement a function to check if a given string is a palindrome or not.
   def checkPalindrome(str: String): Boolean = {
     str.equals(reverseString(str))
   }
@@ -303,6 +305,66 @@ class EasyQns {
     }
     resultArr.toArray
   }
+
+  //  Write a function to find the length of a given string without using the built-in length method.
+  def findLength(str: String): Int = {
+    var length = 0
+    str.foreach(c => length += 1)
+    length
+  }
+
+  //    Implement a function to count the number of vowels in a given string.
+  def countVowels(str: String): Int = {
+    var vowelCount = 0
+    val vowels = Set('a', 'e', 'i', 'o', 'u')
+    str.foreach(c => {
+      if(vowels.contains(c.toLower)) vowelCount += 1
+    })
+    vowelCount
+  }
+
+  //  Write a function to remove all occurrences of a given character from a string.
+  def removeChar(str: String, letter: Char): String = {
+//    str.filterNot(_ == letter)
+    val result = new StringBuilder()
+    str.foreach(c => {
+      if(c != letter) result.append(c)
+    })
+    result.toString()
+  }
+
+  // Given a string create a map with key as the character in the string and value as number of occurences of that character
+  import scala.collection.mutable.Map
+  def mapCharCount(str: String): Map[Char, Int] = {
+    val resultMap = Map[Char, Int]()
+    str.foreach(c => resultMap(c) = resultMap.getOrElse(c, 0) + 1)
+    resultMap
+  }
+
+  //  Implement a function to check if two given strings are anagrams of each other.
+  def isAnagram(str1: String, str2: String): Boolean = {
+//    str1.sorted == str2.sorted
+    var result = true
+    if (str1.length != str2.length) result = false
+    else {
+      val str1Map = mapCharCount(str1)
+      val str2Map = mapCharCount(str2)
+      str1Map.foreach(elem => {
+        val str1Key = elem._1
+        val str1Value = elem._2
+        val keyExistsInStr2 = str2Map.contains(str1Key)
+        val str2Value = str2Map.get(str1Key)
+        if(!keyExistsInStr2 || Some(str1Value) != str2Value) result = false
+      })
+    }
+    result
+  }
+  //  Write a function to find the first non-repeating character in a given string.
+
+  //  Implement a function to convert a given string to camel case.
+
+  //  Write a function to check if a given string is a valid email address.
+  //  Implement a function to find the longest common prefix among a given array of strings.
 
 }
 

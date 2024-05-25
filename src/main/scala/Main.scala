@@ -109,8 +109,34 @@ object Main {
 //    println(s"Reverse of string: ${""} is: ${easyQns.reverseString("")}, is string palindrome? ${easyQns.checkPalindrome("")}")
 //    println(s"Reverse of string: ${str4} is: ${easyQns.reverseString(str4)}, is string palindrome? ${easyQns.checkPalindrome(str4)}")
 
-    println(s"Remove duplicates from arr: ${arr7.mkString(", ")}: ${easyQns.removeDuplicates(arr7).mkString(", ")}")
-    println(s"Remove duplicates from arr: ${arr2.mkString(", ")}: ${easyQns.removeDuplicates(arr2).mkString(", ")}")
-    println(s"Remove duplicates from arr: ${arr1.mkString(", ")}: ${easyQns.removeDuplicates(arr1).mkString(", ")}")
+//    println(s"Remove duplicates from arr: ${arr7.mkString(", ")}: ${easyQns.removeDuplicates(arr7).mkString(", ")}")
+//    println(s"Remove duplicates from arr: ${arr2.mkString(", ")}: ${easyQns.removeDuplicates(arr2).mkString(", ")}")
+//    println(s"Remove duplicates from arr: ${arr1.mkString(", ")}: ${easyQns.removeDuplicates(arr1).mkString(", ")}")
+//    println(s"Vowel count in string ${str1} is ${easyQns.countVowels(str1)}")
+//    println(s"Vowel count in string ${str2} is ${easyQns.countVowels(str2)}")
+//    println(s"Vowel count in string ${str3} is ${easyQns.countVowels(str3)}")
+//    println(s"Vowel count in string ${str4} is ${easyQns.countVowels(str4)}")
+
+//    println(s"Length of string ${str1} is ${easyQns.findLength(str1)}")
+//    println(s"Length of string ${""} is ${easyQns.findLength("")}")
+
+//    println(s"If we remove char 'e' from ${str1}, result is ${easyQns.removeChar(str1, 'e')}")
+//    println(s"If we remove char 'y' from ${str2}, result is ${easyQns.removeChar(str2, 'y')}")
+//    println(s"If we remove char ' ' from ${str3}, result is ${easyQns.removeChar(str3, ' ')}")
+
+    val str5 = "heart"
+    val str6 = "earth"
+    val str7 = "flow"
+    val str8 = "wolf"
+    val str9 = "aab"
+    val str10 = "aabb"
+    val str11 = "cat"
+    val str12 = "dog"
+
+
+    println(s"valid anagram string1: ${str5} and string2: ${str6} ----: ${easyQns.isAnagram(str5, str6)}")
+    println(s"valid anagram string1: ${str7} and string2: ${str8} ----: ${easyQns.isAnagram(str7, str8)}")
+    println(s"valid anagram string1: ${str9} and string2: ${str10} ----: ${easyQns.isAnagram(str9, str10)}")
+    println(s"valid anagram string1: ${str11} and string2: ${str12} ----: ${easyQns.isAnagram(str11, str12)}")
   }
 }
