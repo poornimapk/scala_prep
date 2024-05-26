@@ -1,4 +1,5 @@
 package easy
+import scala.collection.mutable
 import scala.collection.mutable.Stack
 import scala.collection.mutable.ArrayBuffer
 //import scala.collection.mutable.Map
@@ -359,12 +360,79 @@ class EasyQns {
     }
     result
   }
+
   //  Write a function to find the first non-repeating character in a given string.
+  private def charCountMap(str: String): mutable.HashMap[Char, Int] = {
+    // create a map of each character and the count of the character occurrences
+    val resultMap = mutable.HashMap[Char, Int]()
+    str.foreach(c => resultMap(c) = resultMap.getOrElse(c, 0) + 1)
+    resultMap
+  }
+
+  def findFirstNonRepeatingChar(str: String): Option[Char] = {
+    val map = charCountMap(str)
+    var findFirst = false
+    var i = 0
+    var res = ""
+    while (!findFirst && i < str.length) {
+      if(map(str(i)) == 1) {
+        res = str(i).toString
+        findFirst = true
+      }
+      i += 1
+    }
+    if(res.nonEmpty) Some(res(0))
+    else None
+  }
 
   //  Implement a function to convert a given string to camel case.
+  // Eg: input: "hello_world", output: "helloWorld"
+  // split string into List with '_' as separator
+  // convert each string in the list to lowercase
+  // iterate over list, each word first character toUpper except for the first word
+  // concactenate the items in list and return camelCase
+
+  def convertToCamelCase(str: String): String = {
+//    val sb = new StringBuilder()
+//    val splitStr = str.split("_").toList.map(elem => elem.toLowerCase)
+//    sb.append(splitStr(0).charAt(0).toLower + splitStr(0).slice(1, splitStr(0).length))
+//    for(i <- 1 until splitStr.length) {
+//      sb.append(splitStr(i).charAt(0).toUpper + splitStr(i).slice(1, splitStr(i).length))
+//    }
+//    sb.toString()
+    val splitStr = str.split("_").toList.map(elem => elem.toLowerCase)
+    splitStr.zipWithIndex.map {case (word, i) =>
+      if(i == 0) word
+      else word.capitalize
+    }.mkString
+  }
+
 
   //  Write a function to check if a given string is a valid email address.
+
   //  Implement a function to find the longest common prefix among a given array of strings.
+  // ------------------------------------------------------------------------------------------------------------
+  // ARRAY Problems
+
+  //  Write a function to find the smallest element in an array of integers.
+
+  //  Implement a function to find the second largest element in an array of integers.
+
+  //  Write a function to check if an array contains duplicate elements.
+
+  //  Implement a function to merge two sorted arrays into a single sorted array.
+
+  //  Write a function to remove all occurrences of a given element from an array.
+
+  //  Implement a function to find the union of two arrays (containing unique elements).
+
+  //  Write a function to find the intersection of two arrays (containing unique elements).
+
+  //  Implement a function to rotate an array to the left by a given number of positions.
+
+  //  Write a function to find the longest increasing subarray in an array.
+
+  //  Implement a function to find the majority element in an array (an element that appears more than n/2 times, where n is the length of the array).
 
 }
 

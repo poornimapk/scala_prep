@@ -132,11 +132,21 @@ object Main {
     val str10 = "aabb"
     val str11 = "cat"
     val str12 = "dog"
+    val str13 = "hello_world"
 
 
-    println(s"valid anagram string1: ${str5} and string2: ${str6} ----: ${easyQns.isAnagram(str5, str6)}")
-    println(s"valid anagram string1: ${str7} and string2: ${str8} ----: ${easyQns.isAnagram(str7, str8)}")
-    println(s"valid anagram string1: ${str9} and string2: ${str10} ----: ${easyQns.isAnagram(str9, str10)}")
-    println(s"valid anagram string1: ${str11} and string2: ${str12} ----: ${easyQns.isAnagram(str11, str12)}")
+//    println(s"valid anagram string1: ${str5} and string2: ${str6} ----: ${easyQns.isAnagram(str5, str6)}")
+//    println(s"valid anagram string1: ${str7} and string2: ${str8} ----: ${easyQns.isAnagram(str7, str8)}")
+//    println(s"valid anagram string1: ${str9} and string2: ${str10} ----: ${easyQns.isAnagram(str9, str10)}")
+//    println(s"valid anagram string1: ${str11} and string2: ${str12} ----: ${easyQns.isAnagram(str11, str12)}")
+//    println(s"First non repeating character in string ${str4} is: ${easyQns.findFirstNonRepeatingChar(str4)}")
+//    println(s"First non repeating character in string ${str2} is: ${easyQns.findFirstNonRepeatingChar(str2)}")
+//    println(s"First non repeating character in string ${str1} is: ${easyQns.findFirstNonRepeatingChar(str1)}")
+//    println(s"First non repeating character in string ${str10} is: ${easyQns.findFirstNonRepeatingChar(str10)}")
+    println(s"The camel case for string ${str13} is: ${easyQns.convertToCamelCase(str13)}")
+    println(s"The camel case for string ${"my_name_is_john"} is: ${easyQns.convertToCamelCase("my_name_is_john")}")
+    println(s"The camel case for string ${"HTML_CSS_JAVASCRIPT"} is: ${easyQns.convertToCamelCase("HTML_CSS_JAVASCRIPT")}")
+    println(s"The camel case for string ${"snake_case_string_with_numbers_123"} is: ${easyQns.convertToCamelCase("snake_case_string_with_numbers_123")}")
+    println(s"The camel case for string ${"UPPERCASE_STRING"} is: ${easyQns.convertToCamelCase("UPPERCASE_STRING")}")
   }
 }
