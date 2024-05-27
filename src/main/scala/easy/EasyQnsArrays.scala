@@ -3,9 +3,15 @@ package easy
 class EasyQnsArrays {
 
   //  Implement a function to find the second largest element in an array of integers.
-
+  // sample input 1 Array(1, 2, 3, 4, 5) output: 4
+  // sample input 2 Array(20, 1, 19, 100) output: 20
+  def findSecondLargestElementInArr(arr: Array[Int]): Int = {
+    val sortedArr = arr.sorted
+    sortedArr(arr.length - 2)
+  }
 
   //  Write a function to check if an array contains duplicate elements.
+  
 
   //  Implement a function to merge two sorted arrays into a single sorted array.
 
