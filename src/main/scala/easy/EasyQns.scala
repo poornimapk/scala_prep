@@ -409,30 +409,51 @@ class EasyQns {
 
 
   //  Write a function to check if a given string is a valid email address.
+//  The email address should contain exactly one '@' symbol.
+//  The part before the '@' symbol (the local part) should not be empty and should not contain any spaces or special characters (except for periods, underscores, and hyphens).
+//  The part after the '@' symbol (the domain part) should not be empty and should consist of one or more subdomains separated by periods, followed by a valid top-level domain (TLD).
+//  The TLD should be at least two characters long and should consist of only letters.
+
 
   //  Implement a function to find the longest common prefix among a given array of strings.
+  //  Input: Array("tester", "testing", "testifying") output: "test"
+  //  find the shortest string in the array and get the shortest string length
+  private def shortestStrLengthInArray(arr: Array[String]): Int = {
+    arr.map(_.length).min
+  }
+
+  def findLongestCommonPrefixInStrArr(arr: Array[String]): String = {
+    /*if(arr.isEmpty) ""
+    else arr.foldLeft(arr(0))((prefix, str) => {
+      val commonPrefix = str.zipAll(prefix, "", "").takeWhile(pair => pair._1 == pair._2).map(_._1).mkString
+      if(commonPrefix.isEmpty) "" else commonPrefix
+    })*/
+
+    var maxLCPSize = shortestStrLengthInArray(arr)
+    var j = 1
+    val firstElem = arr(0)
+    //  loop through array to check the characters from the beginning (while loop may work)
+    //  build the result prefix string if character matches in
+    while (j < arr.length) {
+      val currentElem = arr(j)
+      var currentLCPSize = 0
+      while (currentLCPSize < maxLCPSize &&
+              firstElem(currentLCPSize) == currentElem(currentLCPSize)) {
+        currentLCPSize += 1
+      }
+      maxLCPSize = currentLCPSize
+      j += 1
+    }
+    firstElem.substring(0, maxLCPSize)
+  }
+
   // ------------------------------------------------------------------------------------------------------------
   // ARRAY Problems
 
   //  Write a function to find the smallest element in an array of integers.
+  def smallestElemInArr(arr: Array[Int]): Int = arr.min
 
-  //  Implement a function to find the second largest element in an array of integers.
 
-  //  Write a function to check if an array contains duplicate elements.
-
-  //  Implement a function to merge two sorted arrays into a single sorted array.
-
-  //  Write a function to remove all occurrences of a given element from an array.
-
-  //  Implement a function to find the union of two arrays (containing unique elements).
-
-  //  Write a function to find the intersection of two arrays (containing unique elements).
-
-  //  Implement a function to rotate an array to the left by a given number of positions.
-
-  //  Write a function to find the longest increasing subarray in an array.
-
-  //  Implement a function to find the majority element in an array (an element that appears more than n/2 times, where n is the length of the array).
 
 }
 

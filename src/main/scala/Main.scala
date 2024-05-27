@@ -1,11 +1,13 @@
 package scala
 
 import easy.EasyQns
+import easy.EasyQnsArrays
 
 object Main {
   def main(args: Array[String]): Unit = {
 //    println("Hello world!")
     val easyQns = new EasyQns()
+    val easyQnsArrays = new EasyQnsArrays()
     val testArr = Array(
       Array(1, 1, 1, 0, 0, 0),
       Array(0, 1, 0, 0, 0, 0),
@@ -23,7 +25,6 @@ object Main {
       Array(1, 2, Array(3, 4, Array(5, 6))),
       Array(Array(7, 8), 9)
     )
-
 //    println(s"Flattened Array: ${easyQns.flattenIntArr(testArr1).mkString(", ")}")
 //    println(s"Flattened Array: ${easyQns.flattenIntArrUsingStack(testArr1).mkString(", ")}")
 //
@@ -69,7 +70,6 @@ object Main {
     val arr5 = Array(1, 2, 3, 4)
     val arr6 = Array(5, 2, 0, 9, 4)
     val arr7 = Array(5, 0, 5, 2, 10, 9, 2)
-
 //    println(easyQns.secondLargestNumber(arr1))
 //    println(easyQns.secondLargestNumber(arr2))
 //    println(easyQns.secondLargestNumber(arr3))
@@ -86,12 +86,10 @@ object Main {
 //    println(s"${easyQns.productExceptSelf(arr5).mkString(", ")}")
 //    println(s"Sum of all even nums for input {${arr2.mkString(", ")}}: ${easyQns.sumOfAllEvenNums(arr2)}")
 //    println(s"Sum of all even nums for input {${arr1.mkString(", ")}}: ${easyQns.sumOfAllEvenNums(arr1)}")
-
     val str1 = "leetcode"
     val str2 = "disney"
     val str3 = "crypt myth"
     val str4 = "malayalam"
-
 //    println(s"Word ${str1} without vowels: ${easyQns.removeVowels(str1)}")
 //    println(s"Word ${str2} without vowels: ${easyQns.removeVowels(str2)}")
 //    println(s"Word ${str3} without vowels: ${easyQns.removeVowels(str3)}")
@@ -133,8 +131,6 @@ object Main {
     val str11 = "cat"
     val str12 = "dog"
     val str13 = "hello_world"
-
-
 //    println(s"valid anagram string1: ${str5} and string2: ${str6} ----: ${easyQns.isAnagram(str5, str6)}")
 //    println(s"valid anagram string1: ${str7} and string2: ${str8} ----: ${easyQns.isAnagram(str7, str8)}")
 //    println(s"valid anagram string1: ${str9} and string2: ${str10} ----: ${easyQns.isAnagram(str9, str10)}")
@@ -143,10 +139,16 @@ object Main {
 //    println(s"First non repeating character in string ${str2} is: ${easyQns.findFirstNonRepeatingChar(str2)}")
 //    println(s"First non repeating character in string ${str1} is: ${easyQns.findFirstNonRepeatingChar(str1)}")
 //    println(s"First non repeating character in string ${str10} is: ${easyQns.findFirstNonRepeatingChar(str10)}")
-    println(s"The camel case for string ${str13} is: ${easyQns.convertToCamelCase(str13)}")
-    println(s"The camel case for string ${"my_name_is_john"} is: ${easyQns.convertToCamelCase("my_name_is_john")}")
-    println(s"The camel case for string ${"HTML_CSS_JAVASCRIPT"} is: ${easyQns.convertToCamelCase("HTML_CSS_JAVASCRIPT")}")
-    println(s"The camel case for string ${"snake_case_string_with_numbers_123"} is: ${easyQns.convertToCamelCase("snake_case_string_with_numbers_123")}")
-    println(s"The camel case for string ${"UPPERCASE_STRING"} is: ${easyQns.convertToCamelCase("UPPERCASE_STRING")}")
+//    println(s"The camel case for string ${str13} is: ${easyQns.convertToCamelCase(str13)}")
+//    println(s"The camel case for string ${"my_name_is_john"} is: ${easyQns.convertToCamelCase("my_name_is_john")}")
+//    println(s"The camel case for string ${"HTML_CSS_JAVASCRIPT"} is: ${easyQns.convertToCamelCase("HTML_CSS_JAVASCRIPT")}")
+//    println(s"The camel case for string ${"snake_case_string_with_numbers_123"} is: ${easyQns.convertToCamelCase("snake_case_string_with_numbers_123")}")
+//    println(s"The camel case for string ${"UPPERCASE_STRING"} is: ${easyQns.convertToCamelCase("UPPERCASE_STRING")}")
+//    println(s"Longest common prefix in string array ${Array("tester", "testing", "testifying").mkString(", ")}: ${easyQns.findLongestCommonPrefixInStrArr(Array("tester", "testing", "testifying"))}")
+//    println(s"Longest common prefix in string array ${Array("hey", "ho", "hay", "hh").mkString(", ")}: ${easyQns.findLongestCommonPrefixInStrArr(Array("hey", "ho", "hay", "hh"))}")
+//    println(s"Longest common prefix in string array ${Array("abb", "baa", "caa", "daa").mkString(", ")}: ${easyQns.findLongestCommonPrefixInStrArr(Array("abb", "baa", "caa", "daa"))}")
+//  println(s"Remove 5 from arr ${arr7.mkString(", ")}  Answer: ${easyQnsArrays.removeElement(arr7, 5).mkString(", ")}")
+//  println(s"Remove 0 from arr ${arr1.mkString(", ")}  Answer: ${easyQnsArrays.removeElement(arr1, 0).mkString(", ")}")
+
   }
 }
