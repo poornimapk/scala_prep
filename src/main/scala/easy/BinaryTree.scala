@@ -31,17 +31,36 @@ object Main {
     printTree(root.right)
   }
 
+  private def findLowestCommonAncestor(root: BinaryTreeNode, t1: Int, t2: Int): BinaryTreeNode = {
+    if(root == null || root.value == t1 || root.value == t2) root
+    else{
+      val left = findLowestCommonAncestor(root.left, t1, t2)
+      val right = findLowestCommonAncestor(root.right, t1, t2)
+      if(left == null) right
+      else if(right == null) left
+      else root
+    }
+  }
+
   def main(args: Array[String]): Unit = {
     val node = new BinaryTreeNode(1)
     node.left = new BinaryTreeNode(2)
     node.right = new BinaryTreeNode(3)
     node.left.left = new BinaryTreeNode(4)
     node.left.right = new BinaryTreeNode(5)
+    node.right.left = new BinaryTreeNode(6)
+    node.right.right = new BinaryTreeNode(7)
+    node.right.left.left = new BinaryTreeNode(8)
+    node.left.right.left = new BinaryTreeNode(9)
 
     println(printTree(node))
     println(maxDepth(node))
 
     val invertedTreeNode = invertTree(node)
     println(printTree(invertedTreeNode))
+
+    val lca = findLowestCommonAncestor(node, 6, 3)
+
+    println(printTree(lca))
   }
 }
