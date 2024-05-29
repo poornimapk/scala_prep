@@ -32,4 +32,11 @@ class EasyQnsArrayTest extends AnyFunSuite {
     assert(easyQnsArray.mergeSortedArrays(Array(23,4,123,456,2,3), Array(4,1,6,8,5,3,4721,2,1)) === Array(1,1,2,2,3,3,4,4,5,6,8,23,123,456,4721))
     assert(easyQnsArray.mergeSortedArrays(Array(), Array()) === Array())
   }
+
+  test("2 sum, given array of integers, sum of i + j should equal to target") {
+    assert(easyQnsArray.twoSum(Array(3, 4, 5, 6), 7) === Array(0, 1) )
+    assert(easyQnsArray.twoSum(Array(4, 5, 6), 10) === Array(0, 2) )
+    assert(easyQnsArray.twoSum(Array(5, 5), 10) === Array(0, 1) )
+    assert(easyQnsArray.twoSum(Array(3, 4, 5, 6), 15) === Array(-1, -1) )
+  }
 }

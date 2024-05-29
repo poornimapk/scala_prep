@@ -3,3 +3,5 @@
 ## Easy Leetcode questions
 
 ## SinglyLinkedList
+
+## BinaryTree
