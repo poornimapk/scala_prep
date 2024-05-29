@@ -1,13 +1,14 @@
 package scala
 
-import easy.EasyQns
-import easy.EasyQnsArrays
+import easy.{EasyQns, EasyQnsArrays, EasyQnsStrings}
 
 object Main {
   def main(args: Array[String]): Unit = {
 //    println("Hello world!")
     val easyQns = new EasyQns()
     val easyQnsArrays = new EasyQnsArrays()
+    val easyQnsStrings = new EasyQnsStrings()
+
     val testArr = Array(
       Array(1, 1, 1, 0, 0, 0),
       Array(0, 1, 0, 0, 0, 0),
@@ -149,6 +150,14 @@ object Main {
 //    println(s"Longest common prefix in string array ${Array("abb", "baa", "caa", "daa").mkString(", ")}: ${easyQns.findLongestCommonPrefixInStrArr(Array("abb", "baa", "caa", "daa"))}")
 //  println(s"Remove 5 from arr ${arr7.mkString(", ")}  Answer: ${easyQnsArrays.removeElement(arr7, 5).mkString(", ")}")
 //  println(s"Remove 0 from arr ${arr1.mkString(", ")}  Answer: ${easyQnsArrays.removeElement(arr1, 0).mkString(", ")}")
-
+    println(easyQnsStrings.findLongestPalindromicSubstring("babad"))
+    println(easyQnsStrings.findLongestPalindromicSubstring("bb"))
+    println(easyQnsStrings.findLongestPalindromicSubstring("aac"))
+    println(easyQnsStrings.findLongestPalindromicSubstring("ac"))
+    println(easyQnsStrings.findLongestPalindromicSubstring("a"))
+    println(easyQnsStrings.findLongestPalindromicSubstring("ccc"))
+    println(easyQnsStrings.findLongestPalindromicSubstring("abcba"))
+//    val someMap = mutable.HashMap("abcba" -> 5,"bcb" -> 3 )
+//    println(someMap.maxBy(_._2).toString())
   }
 }

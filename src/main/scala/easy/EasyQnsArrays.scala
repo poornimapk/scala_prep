@@ -67,9 +67,5 @@ class EasyQnsArrays {
   //  Write a function to find the longest increasing subarray in an array.
 
   //  Implement a function to find the majority element in an array (an element that appears more than n/2 times, where n is the length of the array).
-
-
-  //  Given an array of integers nums and an integer target, return the indices i and j such that nums[i] + nums[j] == target and i != j.
-  //  You may assume that every input has exactly one pair of indices i and j that satisfy the condition.
-  //  Return the answer with the smaller index first.
+  
 }
