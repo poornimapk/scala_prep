@@ -22,4 +22,15 @@ class EasyQnsStringsTest extends AnyFunSuite{
     assert(easyQnsStrings.findLongestPalindromicSubstring("babad") === "bab")
     assert(easyQnsStrings.findLongestPalindromicSubstring("cbbd") === "bb")
   }
+
+  test("remove all consecutive duplicate characters from a string") {
+    assert(easyQnsStrings.removeConsecutiveDupChar("aaaabbbbccccddddd") === "abcd")
+  }
+
+  test("remove all adjacent duplicates in string") {
+    assert(easyQnsStrings.removeAllAdjacentDuplicates("abbaca") === "ca")
+    assert(easyQnsStrings.removeAllAdjacentDuplicates("caabba") === "ca")
+  }
+
+
 }

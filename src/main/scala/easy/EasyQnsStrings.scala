@@ -63,9 +63,25 @@ class EasyQnsStrings {
 
   //  Write a function to remove all consecutive duplicate characters from a string.
   //  Example: Input: "aaaabbbbccccddddd" Output: "abcd"
+  def removeConsecutiveDupChar(str: String): String = {
+    str.split("").toSet.mkString
+  }
+
+  // Write a function to remove all adjacent duplicates in string
+  // Example: input: "abbaca" output: "ca"
+  // Example: input: "caabba" output: "ca"
+  def removeAllAdjacentDuplicates(str: String): String = {
+    val sb = new StringBuilder()
+    str.foreach(ch => {
+      if(sb.nonEmpty && sb.last == ch) sb.deleteCharAt(sb.length() - 1)
+      else sb.append(ch)
+    })
+    sb.toString()
+  }
 
   //  Implement a function to check if two given strings are anagrams of each other, ignoring spaces and case.
   //  Example: Input: "listen", "silent" Output: true
+  
 
   //  Write a function to find the longest common prefix among a given array of strings.
   //    Example: Input: ["flower", "flow", "flight"] Output: "fl"
@@ -78,7 +94,5 @@ class EasyQnsStrings {
 
   //  Implement a function to find the minimum window substring in a given string that contains all characters of another string.
   //  Example: Input: "ADOBECODEBANC", "ABC" Output: "BANC"
-
-
 
 }
