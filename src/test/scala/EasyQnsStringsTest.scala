@@ -33,6 +33,8 @@ class EasyQnsStringsTest extends AnyFunSuite{
   }
 
   test("check if two given strings are anagrams of each other, ignoring spaces and case") {
-    assert(easyQnsStrings.isAnagram("listen", "silent") === true)
+//    assert(easyQnsStrings.isAnagram("listen", "silent") === true)
+//    assert(easyQnsStrings.isAnagram("Listen", "Silent") === true)
+    assert(easyQnsStrings.isAnagram(" listen ", "silent") === true)
   }
 }
