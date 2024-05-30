@@ -81,7 +81,27 @@ class EasyQnsStrings {
 
   //  Implement a function to check if two given strings are anagrams of each other, ignoring spaces and case.
   //  Example: Input: "listen", "silent" Output: true
-  
+  private def charCountMap(str: String): mutable.Map[Char, Int] = {
+    val strMap = mutable.Map[Char, Int]()
+    str.foreach(char => strMap(char) = strMap.getOrElse(char, 0) + 1)
+    strMap
+  }
+
+  def isAnagram(str1: String, str2: String): Boolean = {
+    // if str1.size != str2.size false
+    var res = true
+    if(str1.size != str2.size) res = false
+    else {
+      // create maps to count each character in strings
+      val str1Map = charCountMap(str1)
+      val str2Map = charCountMap(str2)
+      // loop through any 1 map, check each char count equal, if not false
+      str1Map.foreach(elem => {
+        if(!str2Map.contains(elem._1) || Some(elem._2) != str2Map.get(elem._1)) res = false
+      })
+    }
+    res
+  }
 
   //  Write a function to find the longest common prefix among a given array of strings.
   //    Example: Input: ["flower", "flow", "flight"] Output: "fl"
