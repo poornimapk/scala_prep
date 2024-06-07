@@ -8,17 +8,12 @@ case class Employee(name: String, salary: Double)
 case class Movie(name: String, rating: Double)
 
 object HasNumericValueInstances {
-  implicit val employeeHasNumericValue: HasNumericValue[Employee] = new HasNumericValue[Employee] {
-    override def getNumericValue(e: Employee): Double = e.salary
-  }
+  implicit val employeeHasNumericValue: HasNumericValue[Employee] = (e: Employee) => e.salary
 
-  implicit val movieHasNumericValue: HasNumericValue[Movie] = new HasNumericValue[Movie] {
-    override def getNumericValue(m: Movie): Double = m.rating
-  }
+  implicit val movieHasNumericValue: HasNumericValue[Movie] = (m: Movie) => m.rating
 }
 
 object Solutions {
-
   private def sortEmployeesByDesc(employees: List[Employee]): List[Employee] = {
     val sortedEmployees = employees.sortBy(_.salary)
     sortedEmployees.reverse
