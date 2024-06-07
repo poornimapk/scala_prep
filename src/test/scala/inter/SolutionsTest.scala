@@ -6,14 +6,14 @@ import HasNumericValueInstances._
 
 class SolutionsTest extends AnyFlatSpec with Matchers{
   val employees = List(
-    Employee("Danny", 190),
-    Employee("Josh", 300),
-    Employee("Eric", 220),
-    Employee("Ali", 400),
-    Employee("Danielle", 1100),
-    Employee("Richa", 600),
-    Employee("Matt", 500),
-    Employee("Ben", 200),
+    Employee("Sourabh", 190),
+    Employee("Ajinge", 300),
+    Employee("Netravalkar", 220),
+    Employee("Virat", 400),
+    Employee("Rohit", 1100),
+    Employee("Kohli", 600),
+    Employee("Sharma", 500),
+    Employee("Bumrah", 200),
     Employee("Aaron", 670),
     Employee("Jones", 250),
     Employee("Smith", 450),
@@ -37,14 +37,14 @@ class SolutionsTest extends AnyFlatSpec with Matchers{
   "Number of top 10%" should "be correctly computed for the above list of employees" in {
     val top10PercentBySal = Solutions.top10PercentEmployees(employees)
     top10PercentBySal.length should be (2)
-    top10PercentBySal(0).name should be ("Danielle")
+    top10PercentBySal(0).name should be ("Rohit")
     top10PercentBySal(1).name should be ("Aaron")
   }
 
   "Number of top 20%" should "be correctly computed for the above list of employees" in {
     val top20PercentBySal = Solutions.topPercentEmployees(employees, 20)
     top20PercentBySal.length should be (2)
-    top20PercentBySal(0).name should be ("Danielle")
+    top20PercentBySal(0).name should be ("Rohit")
     top20PercentBySal(1).name should be ("Aaron")
   }
 
@@ -57,7 +57,7 @@ class SolutionsTest extends AnyFlatSpec with Matchers{
   "Number of top 10%" should "be correctly computed for the above list of employees using generics" in {
     val top10PercentBySal = Solutions.topPercentItems(employees, 10)
     top10PercentBySal.length should be (2)
-    top10PercentBySal(0).name should be ("Danielle")
+    top10PercentBySal(0).name should be ("Rohit")
     top10PercentBySal(1).name should be ("Aaron")
   }
 
