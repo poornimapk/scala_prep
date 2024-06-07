@@ -1,5 +1,0 @@
-package easy
-
-class DataStructures {
-
-}
